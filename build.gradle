@@ -11,7 +11,6 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
-    //    maven { url "http://mvn.hz.netease.com/artifactory/libs-releases" }
     mavenCentral()
 }
 
@@ -29,4 +28,3 @@ bootRun {
         jvmArgs += ["--add-modules java.xml.bind"]
     }
 }
-
