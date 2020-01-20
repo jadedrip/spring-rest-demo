@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+sourceCompatibility = '1.8'
+
+group 'org.caffy'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    //    maven { url "http://mvn.hz.netease.com/artifactory/libs-releases" }
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-data-rest"
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+bootRun {
+    if(JavaVersion.current().isJava9Compatible()){
+        jvmArgs += ["--add-modules java.xml.bind"]
+    }
+}
+

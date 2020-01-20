@@ -1,0 +1,14 @@
+# 数据库配置
+spring:
+  datasource:
+    #### Datasource 配置 ####
+    username: ${user:name:change_to}
+    password: ${password:change_to_your_password}
+    url: jdbc:mysql://${host}:3306/iot?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.caffy.MySQLUpperCaseTable
+
+# 下面这条可以指定通过 Jpa 实现的 Rest 接口的根路径：http://127.0.0.1:8080/api         
+# spring.data.rest.basePath: /api
